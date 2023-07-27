@@ -10,10 +10,31 @@ public abstract class CoreAbstractClass : MonoBehaviour
 
     // Functions 
 
-    protected virtual void TakeDamage(){
-        coreHealth--;
+    // Checking collisions
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+
+        //Checking whether the core has collided with the enemy
+
+        if(other.gameObject.CompareTag("NormalEnemy")){
+            DealDamage();
+        }
+
+
+
     }
 
-    protected abstract void SpecialAttack();
+    // Dealing damage on the core
+    protected void DealDamage(){
+        coreHealth--;
+        Debug.Log(coreHealth);
 
+        // Can add all the game juice here 
+
+    }
+
+    // Special attack abstract function
+
+    protected abstract void SpecialAttack();
+    
 }
