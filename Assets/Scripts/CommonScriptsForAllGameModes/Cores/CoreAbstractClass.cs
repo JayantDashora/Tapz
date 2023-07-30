@@ -6,7 +6,8 @@ public abstract class CoreAbstractClass : MonoBehaviour
 {
     // Variables 
 
-    [SerializeField] protected int coreHealth; 
+    [SerializeField] protected float coreHealth; 
+    [SerializeField] private EnemyData enemyDataStore;
 
     // Functions 
 
@@ -14,19 +15,36 @@ public abstract class CoreAbstractClass : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
 
-        //Checking whether the core has collided with the enemy
+        //Checking whether the core has collided with the enemy and dealing damage accordingly
 
-        if(other.gameObject.CompareTag("NormalEnemy")){
-            DealDamage();
+        switch (other.gameObject.tag)
+        {
+            case "NormalEnemy":
+                coreHealth -= enemyDataStore.normalEnemyDamage;
+                break;
+
+            case "FastEnemy":
+                coreHealth -= enemyDataStore.fastEnemyDamage;
+                break;
+
+            case "SlowEnemy":
+                coreHealth -= enemyDataStore.slowEnemyDamage;
+                break;
+
+            case "ExploderEnemy":
+                coreHealth -= enemyDataStore.exploderEnemyDamage;
+                // Add functionality to damage the walls/attacking units here 
+
+                break;
+
         }
 
-
+        DamageEffect();
 
     }
 
-    // Dealing damage on the core
-    protected void DealDamage(){
-        coreHealth--;
+    // Common function for dealing the damage to the core, can be used for game juice
+    protected void DamageEffect(){
         Debug.Log(coreHealth);
 
         // Can add all the game juice here 

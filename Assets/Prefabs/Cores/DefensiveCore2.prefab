@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5436513119098075405}
   m_Layer: 0
   m_Name: DefensiveCore2
-  m_TagString: Untagged
+  m_TagString: Core
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coreHealth: 100
+  enemyDataStore: {fileID: 11400000, guid: 9170cc503abfac24d9ebd9d80d5f40a2, type: 2}
 --- !u!58 &-6331299333950252753
 CircleCollider2D:
   m_ObjectHideFlags: 0

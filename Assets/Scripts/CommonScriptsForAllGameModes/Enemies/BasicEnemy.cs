@@ -8,13 +8,13 @@ public class BasicEnemy : MonoBehaviour
     // Variables 
 
     [SerializeField] protected int enemyHealth;
-    [SerializeField] protected int enemyDamage;
     [SerializeField] protected float enemySpeed;
+    [SerializeField] protected ParticleSystem destructEffect;
 
     Vector3 screenCenter = new Vector3(0,0,-10);
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         MoveTowardsCore();
     }
@@ -26,5 +26,23 @@ public class BasicEnemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, screenCenter, enemySpeed * Time.deltaTime);
 
     }
+
+    // Checking collisions
+
+    protected virtual void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Core")){
+            Destruct();
+        }
+    }
+
+    // Destroying the enemy gameobject
+
+    protected virtual void Destruct(){
+        // Add game juice here
+        Instantiate(destructEffect, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
+
 }
 ;
