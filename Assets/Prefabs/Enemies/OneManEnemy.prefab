@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5346203750798697271}
   - component: {fileID: 5819327974947047618}
   - component: {fileID: 8136702845396352509}
-  - component: {fileID: -7930434236222676732}
+  - component: {fileID: 1897746049604366622}
   m_Layer: 0
-  m_Name: NormalEnemy
+  m_Name: OneManEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6949971418920476299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.4196684, y: -2.7404687, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fccb7b346c16e4b4984965a2ee8383c9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Color: {r: 0.9465461, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -123,8 +123,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.20741665
---- !u!114 &-7930434236222676732
+  m_Radius: 0.4995674
+--- !u!114 &1897746049604366622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,11 +133,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6949971418920476299}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa323fcfec232e34b9c5b3380f252665, type: 3}
+  m_Script: {fileID: 11500000, guid: ed706805c135f9b48bd5b1b0ad0e1f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 20
+  enemyHealth: 100
   enemySpeed: 0.2
   currencyGainOnTap: 1
-  enemyDamage: 1
+  enemyDamage: 10
   destructEffect: {fileID: 2247161490006406456, guid: 2abc9d9643caf2544bc3c7d081062f68, type: 3}
+  bomber: {fileID: 2628548416555529107, guid: 236115675ce78d64ebad7e9b4e5be7ee, type: 3}

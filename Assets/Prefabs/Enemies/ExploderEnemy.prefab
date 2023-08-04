@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4493184271421768442}
   m_Layer: 0
   m_Name: ExploderEnemy
-  m_TagString: ExploderEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,5 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 10
-  enemySpeed: 3
+  enemySpeed: 0.3
+  currencyGainOnTap: 1
+  enemyDamage: 2
   destructEffect: {fileID: 2247161490006406456, guid: e4ade5658110496428f2f8ed204c8392, type: 3}

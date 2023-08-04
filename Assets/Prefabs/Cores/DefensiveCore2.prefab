@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3641226350880642416}
   - component: {fileID: -6331299333950252753}
   - component: {fileID: -5436513119098075405}
+  - component: {fileID: -9154707217431582741}
   m_Layer: 0
   m_Name: DefensiveCore2
   m_TagString: Core
@@ -99,8 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b73afd2026b62b47af1a6318d4e6870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coreHealth: 100
-  enemyDataStore: {fileID: 11400000, guid: 9170cc503abfac24d9ebd9d80d5f40a2, type: 2}
 --- !u!58 &-6331299333950252753
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -138,3 +137,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-9154707217431582741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4821938281728199633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71fd162e58f4774a92ceecfa9f64efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coreHealth: 100

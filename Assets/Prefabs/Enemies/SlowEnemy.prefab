@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6999844767688394066}
   m_Layer: 0
   m_Name: SlowEnemy
-  m_TagString: SlowEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,5 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 30
-  enemySpeed: 0.5
+  enemySpeed: 0.1
+  currencyGainOnTap: 1
+  enemyDamage: 2
   destructEffect: {fileID: 2247161490006406456, guid: 2abc9d9643caf2544bc3c7d081062f68, type: 3}

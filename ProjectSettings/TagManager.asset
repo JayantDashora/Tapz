@@ -4,11 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - NormalEnemy
-  - FastEnemy
-  - SlowEnemy
   - Core
-  - ExploderEnemy
+  - Enemy
   layers:
   - Default
   - TransparentFX
