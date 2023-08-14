@@ -16,6 +16,7 @@ public class BlackoutEnemyScript : BasicEnemy
         statsRef = GameObject.Find("GameManagers/GameStatsManager").GetComponent<GameStatsManagerScript>();
         fadeSprite = GameObject.Find("FadeSprite");
         coreHealthScriptRef = GameObject.FindWithTag("Core").GetComponent<CoreHealth>();
+        powerupStatus = GameObject.Find("GameManagers/PowerupStatusManager").GetComponent<PowerupStatusManagerScript>();
     }
     override protected void Update(){
 

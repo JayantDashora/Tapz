@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Core
   - Enemy
+  - DefensiveCore1Shield
   layers:
   - Default
   - TransparentFX

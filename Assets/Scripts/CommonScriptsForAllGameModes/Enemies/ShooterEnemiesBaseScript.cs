@@ -20,6 +20,7 @@ public class ShooterEnemiesBaseScript : BasicEnemy
         selfCollider = GetComponent<Collider2D>();
         statsRef = GameObject.Find("GameManagers/GameStatsManager").GetComponent<GameStatsManagerScript>();
         coreHealthScriptRef = GameObject.FindWithTag("Core").GetComponent<CoreHealth>();
+        powerupStatus = GameObject.Find("GameManagers/PowerupStatusManager").GetComponent<PowerupStatusManagerScript>();
         
         // Invoke the shooting nature of the enemy
         InvokeRepeating("ShootAtCore", 0.1f, shootFrequency);

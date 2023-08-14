@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class DefensiveCore2Script : CoreAbstractClass
 {
+    // Variables
+
+    [SerializeField] private GameObject forceField;
     
     // Special Attack
 
     protected override void SpecialAttack(){
-        Debug.Log("Om");
+        // Add game juice here 
+        Instantiate(forceField, transform.position, transform.rotation);
+        
     }
 
 }

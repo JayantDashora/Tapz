@@ -8,7 +8,6 @@ public class GameStatsManagerScript : MonoBehaviour
 
     [HideInInspector] public int gameCurrency;
     [HideInInspector] public int waveNumber = 1;
-    [SerializeField] private float scoreMultiplier;
 
     // References 
 

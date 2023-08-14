@@ -41,11 +41,6 @@ public class SplittingEnemyScript : BasicEnemy
         }
     }
 
-    // The code to run when the enemy is tapped 
-    override protected void Tapped(){
-        // Add game juice here
-        enemyHealth -= 10;          
-    } 
 
     // Check whether to destroy or not 
 

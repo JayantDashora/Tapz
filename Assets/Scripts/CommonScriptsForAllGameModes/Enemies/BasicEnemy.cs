@@ -18,6 +18,8 @@ public class BasicEnemy : MonoBehaviour
     protected Collider2D selfCollider;
     protected CoreHealth coreHealthScriptRef;
 
+    protected PowerupStatusManagerScript powerupStatus;
+
     // Functions
 
     protected GameStatsManagerScript statsRef;
@@ -25,6 +27,7 @@ public class BasicEnemy : MonoBehaviour
     protected virtual void Start(){
         selfCollider = GetComponent<Collider2D>();
         statsRef = GameObject.Find("GameManagers/GameStatsManager").GetComponent<GameStatsManagerScript>();
+        powerupStatus = GameObject.Find("GameManagers/PowerupStatusManager").GetComponent<PowerupStatusManagerScript>();
         coreHealthScriptRef = GameObject.FindWithTag("Core").GetComponent<CoreHealth>();
     }
     protected virtual void Update()
@@ -78,7 +81,9 @@ public class BasicEnemy : MonoBehaviour
                 // Add game juice here to make the tap feel more responsive
 
                 if(selfCollider == touchedCollider){
-                    Tapped();
+                    Tapped(touchPosition);
+
+                    CameraShakeEffect.Instance.ScreenShake(2f,0.1f);
                 }
             }
         }
@@ -88,9 +93,43 @@ public class BasicEnemy : MonoBehaviour
 
     // The code to run when the enemy is tapped 
 
-    protected virtual void Tapped(){
-        // Add game juice here
-        enemyHealth -= 10;          
+    protected virtual void Tapped(Vector2 touchPos){
+        
+        switch(powerupStatus.powerupChoice){
+            
+            // Taking the powerup status from the script and dealing damage accordingly 
+
+            // No powerup
+            case 0:
+                // Add game juice here for normal kill
+                enemyHealth -= 10;
+                break;
+                
+            // Laser click powerup
+            case 1:
+            // Add game juice here for laser powerup
+                enemyHealth -= 50;
+                break;
+
+            // Explosive Click
+            case 2:
+                // Add game juice here for explosive powerup (Some explosion particle effect or screen shake)
+                Collider2D[] touchedColliders = Physics2D.OverlapCircleAll(touchPos, 1.5f);
+
+                foreach(Collider2D collider in touchedColliders){
+                    // Add game juice here
+                    if(collider.gameObject.CompareTag("Enemy")){
+                        Destroy(collider.gameObject);
+                    }
+                    
+                }
+                break;
+
+            
+
+
+        }
+                  
     } 
 
     // Check whether to destroy or not 
@@ -106,7 +145,7 @@ public class BasicEnemy : MonoBehaviour
     // Check whether enemy is offbounds
 
     protected virtual void CheckOffbounds(){
-        if(transform.position.y < -10){
+        if((transform.position.y < -10) || (transform.position.y > 10) || (transform.position.x < -10)|| (transform.position.x > 10)){
             Destroy(gameObject);
         }
     }

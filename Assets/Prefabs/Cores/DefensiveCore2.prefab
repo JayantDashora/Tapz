@@ -100,6 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b73afd2026b62b47af1a6318d4e6870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUsingSpecialAttack: 0
+  specialAttackCost: 1
+  forceField: {fileID: 7268682484777683300, guid: 9cf55818d79c5a84ca9e20686cd5abca, type: 3}
 --- !u!58 &-6331299333950252753
 CircleCollider2D:
   m_ObjectHideFlags: 0

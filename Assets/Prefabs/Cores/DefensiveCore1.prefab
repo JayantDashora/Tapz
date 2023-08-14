@@ -100,7 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8c3c53c8ad2584c8669d0e389cc6af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDataStore: {fileID: 11400000, guid: 9170cc503abfac24d9ebd9d80d5f40a2, type: 2}
+  isUsingSpecialAttack: 0
+  specialAttackCost: 1
+  requiredHoldTime: 1
+  shield: {fileID: 7453497241008646364, guid: 291b27da1116f404c9a35c5e9a6145be, type: 3}
 --- !u!58 &4988308301783038289
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -7,9 +7,9 @@ public class EnemySpawnManagerScript : MonoBehaviour
     // Variables 
 
     private int enemyAccess = 3;
-    private int budget = 5;
     private Camera mainCamera;
 
+    [SerializeField] private int budget = 50;
     [SerializeField] private int budgetGainPerWave;
     [SerializeField] private List<GameObject> enemies = new List<GameObject>();
     [SerializeField] private List<int> enemiesCost = new List<int>();
