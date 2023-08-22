@@ -7,6 +7,7 @@ public class DontTapEnemyScript : BasicEnemy
     // Variables
 
     [SerializeField] private float enemyDamageOnTapped;
+
     override protected void Tapped(Vector2 touchPos){
         // Add game juice here
         coreHealthScriptRef.coreHealth -= enemyDamageOnTapped; // Damaging the core

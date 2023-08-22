@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BasicEnemy : MonoBehaviour
 {
@@ -13,22 +14,22 @@ public class BasicEnemy : MonoBehaviour
 
     [SerializeField] protected float enemyDamage;
     [SerializeField] protected ParticleSystem destructEffect;
+
     protected Vector3 screenCenter = new Vector3(0,0,-10);
-
     protected Collider2D selfCollider;
+
     protected CoreHealth coreHealthScriptRef;
-
     protected PowerupStatusManagerScript powerupStatus;
-
-    // Functions
-
     protected GameStatsManagerScript statsRef;
 
+    // Functions
     protected virtual void Start(){
+
         selfCollider = GetComponent<Collider2D>();
         statsRef = GameObject.Find("GameManagers/GameStatsManager").GetComponent<GameStatsManagerScript>();
         powerupStatus = GameObject.Find("GameManagers/PowerupStatusManager").GetComponent<PowerupStatusManagerScript>();
         coreHealthScriptRef = GameObject.FindWithTag("Core").GetComponent<CoreHealth>();
+
     }
     protected virtual void Update()
     {

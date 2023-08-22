@@ -8,6 +8,7 @@ public class GameStatsManagerScript : MonoBehaviour
 
     [HideInInspector] public int gameCurrency;
     [HideInInspector] public int waveNumber = 1;
+    [HideInInspector] public int highScore;
 
     // References 
 
@@ -18,11 +19,19 @@ public class GameStatsManagerScript : MonoBehaviour
     private void Start() {
 
         coreHealthScriptRef = GameObject.FindWithTag("Core").GetComponent<CoreHealth>();
+        highScore = PlayerPrefs.GetInt("HIGHSCORE");
 
     }
 
     private void Update() {
-        Debug.Log("Game Currency: " + gameCurrency.ToString() + "             Core Health: " + coreHealthScriptRef.coreHealth.ToString() + "             Wave Number: " + waveNumber.ToString());
+
+        if(waveNumber > highScore){
+            // Add game juice here for the new highscore
+            PlayerPrefs.SetInt("HIGHSCORE", waveNumber);
+            PlayerPrefs.Save();
+        }
+
+        Data.thisGameScore = waveNumber;
 
     }
 

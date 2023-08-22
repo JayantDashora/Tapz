@@ -12,6 +12,7 @@ public class CoreTurretScript : MonoBehaviour
 
     private float timeSinceLastShot;
     private Collider2D[] targets;
+    private Animator animator;
 
     private OffensiveCore3Script coreScriptRef;
 
@@ -20,6 +21,7 @@ public class CoreTurretScript : MonoBehaviour
         coreScriptRef = GameObject.FindWithTag("Core").GetComponent<OffensiveCore3Script>();
         Invoke("SelfDestruct", lifetime);
         timeSinceLastShot = 0f;
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -45,6 +47,8 @@ public class CoreTurretScript : MonoBehaviour
                     // Instantiate the bullet at the shootPoint
                     // Add game juice here
                     Instantiate(bullet, shootPoint.position, transform.rotation);
+                    
+                    animator.SetBool("isShooting", true);
 
                     // Reset time since last shot
                     timeSinceLastShot = 0f;
@@ -52,6 +56,8 @@ public class CoreTurretScript : MonoBehaviour
                     // Break after shooting at the first valid target
                     break;
                 }
+
+                animator.SetBool("isShooting", false);
             }
         }
     }
@@ -63,4 +69,5 @@ public class CoreTurretScript : MonoBehaviour
         coreScriptRef.isUsingSpecialAttack = false;
         Destroy(gameObject);
     }
+
 }

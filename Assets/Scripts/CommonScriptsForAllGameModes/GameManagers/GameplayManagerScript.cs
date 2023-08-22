@@ -8,18 +8,38 @@ public class GameplayManagerScript : MonoBehaviour
 
     // Variables
 
-    public bool isGameover = false;
-    [SerializeField] private int gameOverSceneIndex; 
+    [SerializeField] GameObject sceneTransitionEffect;
+    [SerializeField] private float sceneTransitionDelay;
+
+    [HideInInspector] public bool isGameover = false; 
+    [HideInInspector] public bool nextSceneTriggered = false;
+
+    private Vector3 center = new Vector3(0,0,0);
 
     private void Update() {
-        if(isGameover == true){
+        if(isGameover == true && nextSceneTriggered == false){
 
             // Check whether the game is over or not
             // Move to next scene
             // Add scene transition effects here
 
-            SceneManager.LoadScene(gameOverSceneIndex, LoadSceneMode.Single);
+            SceneTransition();
+            Invoke("NextScene", sceneTransitionDelay);
+            nextSceneTriggered = true;
         }
+    }
+
+    // Move to the next scene
+
+    private void NextScene(){
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+    }
+
+    // Scene transition effect
+
+    private void SceneTransition(){
+        // Add other effects here
+        Instantiate(sceneTransitionEffect, center, Quaternion.identity);
     }
 
 

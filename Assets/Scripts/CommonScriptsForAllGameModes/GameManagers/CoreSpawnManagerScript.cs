@@ -29,7 +29,7 @@ public class CoreSpawnManagerScript : MonoBehaviour
     private void Awake() {
 
         // Setting the value of core choice to the match the choice made by the user in the menu 
-        coreChoice = 8;
+        coreChoice = Data.chosenCoreIndex;
         SpawnCore();
     }
 

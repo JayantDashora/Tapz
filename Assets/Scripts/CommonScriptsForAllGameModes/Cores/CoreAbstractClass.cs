@@ -9,17 +9,19 @@ public abstract class CoreAbstractClass : MonoBehaviour
     private CoreHealth coreHealthRef; 
     private Collider2D selfCollider;
 
-    private GameStatsManagerScript statsRef;
+    protected GameStatsManagerScript statsRef;
     private PowerupStatusManagerScript powerupStatus;
 
     [HideInInspector] public bool isUsingSpecialAttack;
 
-    [SerializeField] private int specialAttackCost;
+    [SerializeField] protected int specialAttackCost;
 
     float lastTapTime = 0f;
     float doubleTapThreshold = 0.3f;    
 
     [SerializeField] private GameObject tapEffect;
+
+    [HideInInspector] public Animator animator;
 
 
     // Functions 
@@ -29,6 +31,7 @@ public abstract class CoreAbstractClass : MonoBehaviour
         selfCollider = GetComponent<Collider2D>();
         statsRef = GameObject.Find("GameManagers/GameStatsManager").GetComponent<GameStatsManagerScript>();
         powerupStatus = GameObject.Find("GameManagers/PowerupStatusManager").GetComponent<PowerupStatusManagerScript>();
+        animator = GetComponent<Animator>();
 
     }
 
@@ -80,6 +83,7 @@ public abstract class CoreAbstractClass : MonoBehaviour
                     transform.rotation = Quaternion.identity;   // Restore the rotation of the defensive core
                     SpecialAttack();
                     isUsingSpecialAttack = true;
+                    animator.SetBool("isCharged", true);
                     lastTapTime = 0;
 
                 }
@@ -118,6 +122,10 @@ public abstract class CoreAbstractClass : MonoBehaviour
 
         if((statsRef.gameCurrency > specialAttackCost)&& (isUsingSpecialAttack == false)){
             transform.Rotate(0f, 0f, 270 * Time.deltaTime);
+            animator.SetBool("isCharged", true);
+        }
+        else{
+            animator.SetBool("isCharged", false);
         }
         
 

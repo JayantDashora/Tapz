@@ -84,6 +84,9 @@ public class EnemySpawnManagerScript : MonoBehaviour
         budget += budgetGainPerWave;
 
         statsRef.waveNumber++;
+
+        // Add game juice here to display the new wave number
+
     }
 
 

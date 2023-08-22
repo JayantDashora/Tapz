@@ -10,6 +10,7 @@ public class DefensiveCore1ShieldScript : MonoBehaviour
     [SerializeField] private float enemyDamage;
     private DefensiveCore1Script coreScriptRef;
 
+
     // Functions
 
     private void Start() {

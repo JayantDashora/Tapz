@@ -28,10 +28,19 @@ public class HealingDroneScript : MonoBehaviour
     private DefensiveCore3Script coreScriptRef;
     private CoreHealth coreHealthRef;
 
+    private SpriteRenderer sprite;
+
+    [SerializeField] private GameObject healEffect;
+    [SerializeField] private float healEffectFrequency;
+
+    private float timer;
+
+
     void Start()
     {
         coreScriptRef = GameObject.FindWithTag("Core").GetComponent<DefensiveCore3Script>();
         coreHealthRef = GameObject.FindWithTag("Core").GetComponent<CoreHealth>();
+        sprite = GetComponent<SpriteRenderer>();
         Invoke("EnterScreen",0.1f);
     }
 
@@ -47,6 +56,14 @@ public class HealingDroneScript : MonoBehaviour
         float distanceToCenter = Vector3.Distance(transform.position, center);
         if (distanceToCenter <= 0.8f){
             // Add game juice here
+
+            if(timer > healEffectFrequency){
+                Instantiate(healEffect,center,Quaternion.identity);
+                timer = 0; 
+            }
+
+            timer += Time.deltaTime;
+
             float healAmount = healthIncreasedPerSecond * Time.deltaTime;
             coreHealthRef.coreHealth += healAmount;
         }
@@ -68,13 +85,15 @@ public class HealingDroneScript : MonoBehaviour
     }
 
     private void EnterScreen(){
-        
+        sprite.flipX = false;
         interpolateAmountEnter += (interpolateAmountEnter + Time.deltaTime) % 0.001f;
         transform.position = Vector3.Lerp(Vector3.Lerp(spawnPoint,iPoint1,interpolateAmountEnter),Vector3.Lerp(iPoint1,targetPoint,interpolateAmountEnter),interpolateAmountEnter);
     }
 
     private void ExitScreen(){
+        sprite.flipX = true;
         interpolateAmountExit += (interpolateAmountExit + Time.deltaTime) % 0.001f;
         transform.position = Vector3.Lerp(Vector3.Lerp(targetPoint,iPoint2,interpolateAmountExit),Vector3.Lerp(iPoint2,destroyPoint,interpolateAmountExit),interpolateAmountExit);
     }
+
 }

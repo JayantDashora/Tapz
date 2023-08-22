@@ -15,10 +15,10 @@ public class HideCoreScript : MonoBehaviour
     private DefensiveCore5Script coreScriptRef;
     private GameObject coreRef;
 
+
     void Start(){
         coreRef = GameObject.FindWithTag("Core");
         coreScriptRef = coreRef.GetComponent<DefensiveCore5Script>();
-
         Gamejuice();
         Invoke("Hide", delayBeforeHide);
         Invoke("SelfDestruct", lifetime);

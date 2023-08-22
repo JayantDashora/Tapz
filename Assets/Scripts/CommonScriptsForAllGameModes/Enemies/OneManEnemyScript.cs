@@ -6,7 +6,6 @@ public class OneManEnemyScript : BasicEnemy
 {
     // Variables
 
-
     // Checking collisions
 
     override protected void OnCollisionEnter2D(Collision2D other){
@@ -16,6 +15,7 @@ public class OneManEnemyScript : BasicEnemy
             Destruct();
         }
     }
+
 
     // Bomb rain when one man collides with the core 
 

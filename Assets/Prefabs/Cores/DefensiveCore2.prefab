@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isUsingSpecialAttack: 0
   specialAttackCost: 1
+  tapEffect: {fileID: 1560693925641746517, guid: f793c1a846abfd44eb311a6f117b6e90, type: 3}
   forceField: {fileID: 7268682484777683300, guid: 9cf55818d79c5a84ca9e20686cd5abca, type: 3}
 --- !u!58 &-6331299333950252753
 CircleCollider2D:

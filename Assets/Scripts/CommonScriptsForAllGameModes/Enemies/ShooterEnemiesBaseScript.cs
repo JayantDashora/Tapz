@@ -12,6 +12,7 @@ public class ShooterEnemiesBaseScript : BasicEnemy
 
     [SerializeField] private Transform shootPoint;
 
+    private Animator animator;
 
     // Functions
 
@@ -21,13 +22,20 @@ public class ShooterEnemiesBaseScript : BasicEnemy
         statsRef = GameObject.Find("GameManagers/GameStatsManager").GetComponent<GameStatsManagerScript>();
         coreHealthScriptRef = GameObject.FindWithTag("Core").GetComponent<CoreHealth>();
         powerupStatus = GameObject.Find("GameManagers/PowerupStatusManager").GetComponent<PowerupStatusManagerScript>();
+        animator = GetComponent<Animator>();
         
         // Invoke the shooting nature of the enemy
         InvokeRepeating("ShootAtCore", 0.1f, shootFrequency);
     }
 
     private void ShootAtCore(){
+
+        if(animator != null){
+            animator.SetBool("isShooting" ,true);
+        }
+
         Instantiate(bullet, shootPoint.position, transform.rotation);
+
     }
 
 

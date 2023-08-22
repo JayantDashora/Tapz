@@ -16,5 +16,21 @@ public class DefensiveCore4Script : CoreAbstractClass
         Instantiate(timeSlowdown,spawnPoint, transform.rotation);
     }
 
+    // Special attack indicator
+
+    protected override void SpecialAttackIndicator(){
+
+        // Indicator that you can use the special attack
+        // Also add game juice here
+
+        if((statsRef.gameCurrency > specialAttackCost)&& (isUsingSpecialAttack == false)){
+            animator.SetBool("isCharged", true);
+        }
+        else{
+            animator.SetBool("isCharged", false);
+        }
+        
+
+    }
 
 }
