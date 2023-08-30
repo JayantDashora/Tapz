@@ -7,6 +7,7 @@ public class LandmineScript : MonoBehaviour
     // Variables
 
     [SerializeField] private float explosionRange;
+    [SerializeField] private ParticleSystem explosion;
 
     private Collider2D[] enemiesInRange;
 
@@ -26,6 +27,8 @@ public class LandmineScript : MonoBehaviour
                     // Add game juice here
 
                     Destroy(enemy.gameObject);
+                    CameraShakeEffect.Instance.ScreenShake(5f,0.2f);
+                    Instantiate(explosion,transform.position,Quaternion.identity);
                     Destroy(gameObject);
                 }
                 

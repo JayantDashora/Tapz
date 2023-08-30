@@ -21,6 +21,9 @@ public class BasicEnemy : MonoBehaviour
     protected CoreHealth coreHealthScriptRef;
     protected PowerupStatusManagerScript powerupStatus;
     protected GameStatsManagerScript statsRef;
+    protected GameUIManagerScript uiManager;
+
+    protected Animator fadeEffectAnimator;
 
     // Functions
     protected virtual void Start(){
@@ -28,6 +31,8 @@ public class BasicEnemy : MonoBehaviour
         selfCollider = GetComponent<Collider2D>();
         statsRef = GameObject.Find("GameManagers/GameStatsManager").GetComponent<GameStatsManagerScript>();
         powerupStatus = GameObject.Find("GameManagers/PowerupStatusManager").GetComponent<PowerupStatusManagerScript>();
+        uiManager = GameObject.Find("GameManagers/GameUIManager").GetComponent<GameUIManagerScript>();
+        fadeEffectAnimator = GameObject.Find("UI/Canvas/FlashEffect").GetComponent<Animator>();
         coreHealthScriptRef = GameObject.FindWithTag("Core").GetComponent<CoreHealth>();
 
     }
@@ -54,6 +59,9 @@ public class BasicEnemy : MonoBehaviour
         if(other.gameObject.CompareTag("Core")){
 
             coreHealthScriptRef.coreHealth -= enemyDamage; // Damaging the core
+            uiManager.PopCoreHealthUI();
+            fadeEffectAnimator.SetTrigger("flash");
+            CameraShakeEffect.Instance.ScreenShake(5f,0.3f);
             Destruct();
         }
     }
@@ -83,8 +91,6 @@ public class BasicEnemy : MonoBehaviour
 
                 if(selfCollider == touchedCollider){
                     Tapped(touchPosition);
-
-                    CameraShakeEffect.Instance.ScreenShake(2f,0.1f);
                 }
             }
         }
@@ -103,13 +109,15 @@ public class BasicEnemy : MonoBehaviour
             // No powerup
             case 0:
                 // Add game juice here for normal kill
+                CameraShakeEffect.Instance.ScreenShake(2f,0.3f);
                 enemyHealth -= 10;
                 break;
                 
             // Laser click powerup
             case 1:
             // Add game juice here for laser powerup
-                enemyHealth -= 50;
+                CameraShakeEffect.Instance.ScreenShake(5f,0.3f);
+                enemyHealth -= 100;
                 break;
 
             // Explosive Click
@@ -120,10 +128,13 @@ public class BasicEnemy : MonoBehaviour
                 foreach(Collider2D collider in touchedColliders){
                     // Add game juice here
                     if(collider.gameObject.CompareTag("Enemy")){
+                        
                         Destroy(collider.gameObject);
                     }
                     
                 }
+
+                CameraShakeEffect.Instance.ScreenShake(8f,0.5f);
                 break;
 
             
@@ -137,8 +148,16 @@ public class BasicEnemy : MonoBehaviour
 
     protected virtual void CheckHealth(){
         if(enemyHealth <= 0){
-            statsRef.gameCurrency += currencyGainOnTap;
-            Destruct();
+
+            if(powerupStatus.powerupChoice != 1){
+                uiManager.PopGameCurrencyUI();
+                statsRef.gameCurrency += currencyGainOnTap;
+                Destruct();
+            }
+            else if(powerupStatus.powerupChoice == 1){
+                Destruct();
+            }
+
                         
         }
     }

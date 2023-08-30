@@ -12,11 +12,20 @@ public class OffensiveCore1SawScript : MonoBehaviour
 
     private OffensiveCore1Script coreScriptRef;
 
+    private Animator animator;
+    [SerializeField] private ParticleSystem particleEffect;
+
+    [SerializeField] private ParticleSystem killEffect;
+
 
     // Functions
 
     private void Start() {
         coreScriptRef = GameObject.FindWithTag("Core").GetComponent<OffensiveCore1Script>();
+        animator = GetComponent<Animator>();
+
+        Instantiate(particleEffect,transform.position,Quaternion.identity);
+        CameraShakeEffect.Instance.ScreenShake(6f,0.3f);
     }
 
     private void Update() {
@@ -33,9 +42,11 @@ public class OffensiveCore1SawScript : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy")){
 
             // Add game juice here when the enemy damages the saw
+            CameraShakeEffect.Instance.ScreenShake(3f,0.2f);
             sawHealth -= enemyDamage; // This saw takes same damage from all different types of enemies
 
             // Add game juice here when the enemy gets destroyed
+            Instantiate(killEffect,other.transform.position,Quaternion.identity);
             Destroy(other.gameObject);
         }
     }
@@ -45,9 +56,17 @@ public class OffensiveCore1SawScript : MonoBehaviour
     private void CheckHealth(){
         if(sawHealth <= 0){
             // Add game juice here
+            animator.SetTrigger("fade");
             coreScriptRef.isUsingSpecialAttack = false;
-            Destroy(gameObject);
+            Invoke("Remove", 1.5f);
             
         }
+    }
+
+
+    // Destroy object 
+
+    private void Remove(){
+        Destroy(gameObject);
     }
 }

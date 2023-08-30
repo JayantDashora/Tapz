@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1665217645278701747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8707029965105317136}
+  m_Layer: 0
+  m_Name: ParticlePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8707029965105317136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665217645278701747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.315, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5315803421191015375}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5315803421191015370
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,6 +44,7 @@ GameObject:
   - component: {fileID: 5315803421191015373}
   - component: {fileID: 5315803421191015372}
   - component: {fileID: 5315803421191015371}
+  - component: {fileID: 4464349163626763776}
   m_Layer: 0
   m_Name: ShooterEnemy
   m_TagString: Enemy
@@ -33,6 +65,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5315803422389595365}
+  - {fileID: 8707029965105317136}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -162,11 +195,33 @@ MonoBehaviour:
   enemyHealth: 30
   enemySpeed: 0.2
   currencyGainOnTap: 1
-  enemyDamage: 2
-  destructEffect: {fileID: 2247161490006406456, guid: 2abc9d9643caf2544bc3c7d081062f68, type: 3}
-  shootFrequency: 1
+  enemyDamage: 4
+  destructEffect: {fileID: 2247161490006406456, guid: 24efec270cbb49a43ac0d1fdceda1020, type: 3}
+  shootFrequency: 2
   bullet: {fileID: 5358607202288858164, guid: 39d6f3602eac802448a07dfc325452df, type: 3}
   shootPoint: {fileID: 5315803422389595365}
+  particlePoint: {fileID: 8707029965105317136}
+  particleEffect: {fileID: 2247161490006406456, guid: 8b39bf44162c5914daaf5bb456558a9a, type: 3}
+--- !u!95 &4464349163626763776
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315803421191015370}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 89061d9589e8d30478e23fe83dec6514, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5315803422389595364
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5315803422389595364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.272, z: 0}
+  m_LocalPosition: {x: 0, y: 0.525, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

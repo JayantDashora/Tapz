@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7453497241008646367}
   - component: {fileID: 7453497241008646360}
   - component: {fileID: 7453497241008646361}
+  - component: {fileID: 4806869727807396450}
   m_Layer: 0
   m_Name: DefensiveCore1Shield
   m_TagString: DefensiveCore1Shield
@@ -114,5 +115,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e077bd8f33e502041add316328df3bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldHealth: 40
+  shieldHealth: 30
   enemyDamage: 2
+  particleEffect: {fileID: 2247161490006406456, guid: 560a0c3cdee42cc4d810418c498a8228, type: 3}
+--- !u!95 &4806869727807396450
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7453497241008646364}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae9485a9468d0904cb6a52c436ae5a06, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

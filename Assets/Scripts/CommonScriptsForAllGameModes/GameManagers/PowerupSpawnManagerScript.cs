@@ -11,7 +11,7 @@ public class PowerupSpawnManagerScript : MonoBehaviour
     // Functions
 
     IEnumerator Start() {
-        yield return new WaitForSeconds(Random.Range(1,11));
+        yield return new WaitForSeconds(Random.Range(60,120));
         StartCoroutine(SpawnPowerup()); // Start the coroutine
     }
 
@@ -35,7 +35,7 @@ public class PowerupSpawnManagerScript : MonoBehaviour
                 Instantiate(powerups[Random.Range(0, powerups.Count)], worldSpawnPoint, Quaternion.identity);
             }
 
-            yield return new WaitForSeconds(Random.Range(1,11));
+            yield return new WaitForSeconds(Random.Range(60,120));
         }
     }
 }

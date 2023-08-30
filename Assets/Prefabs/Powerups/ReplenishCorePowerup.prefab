@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4037074420105658482}
   - component: {fileID: 4037074420105658483}
   - component: {fileID: 4037074420105658484}
+  - component: {fileID: 8611891468959895960}
   m_Layer: 0
   m_Name: ReplenishCorePowerup
   m_TagString: Untagged
@@ -115,4 +116,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupNumber: 5
-  lifetime: 0.1
+  lifetime: 0.7
+  instructionsText: HEALTH++
+--- !u!95 &8611891468959895960
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4037074420105658485}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0ea78ca8243a814ebfd37de6d6871cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

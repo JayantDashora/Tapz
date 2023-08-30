@@ -11,11 +11,16 @@ public class PowerupScript : MonoBehaviour
     protected Vector3 hideSpot = new Vector3(32,0,0);
 
     private Collider2D selfCollider;
+    private Animator animator;
 
     protected PowerupStatusManagerScript powerupStatus;
 
     [SerializeField] protected int powerupNumber;
     [SerializeField] protected float lifetime;
+
+    [SerializeField] private string instructionsText;
+
+    private GameUIManagerScript uiManager;
 
     // Functions
 
@@ -23,6 +28,8 @@ public class PowerupScript : MonoBehaviour
 
         powerupStatus = GameObject.Find("GameManagers/PowerupStatusManager").GetComponent<PowerupStatusManagerScript>();
         selfCollider = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
+        uiManager = GameObject.Find("GameManagers/GameUIManager").GetComponent<GameUIManagerScript>();
 
     }
 
@@ -65,9 +72,17 @@ public class PowerupScript : MonoBehaviour
     
     protected virtual void Powerup(){
         // Add game juice in this function
+
+        uiManager.ShowPowerupInstructions(instructionsText,lifetime - 1);
+        animator.SetTrigger("click");
+
         powerupStatus.powerupChoice = powerupNumber;
-        transform.position = hideSpot;
+        Invoke("Hide", 0.5f);
         Invoke("SelfDestruct", lifetime);
+    }
+
+    private void Hide(){
+        transform.position = hideSpot;
     }
 
     // Destroy gameobject 

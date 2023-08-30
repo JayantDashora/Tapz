@@ -13,11 +13,15 @@ public class PowerupStatusManagerScript : MonoBehaviour
     [SerializeField] private int waveNumberBoostAmount;
     [SerializeField] private int gameCurrencyBoostAmount;
 
+    [SerializeField] private ParticleSystem landmineParticleSystem;
+
     float lastTapTime = 0f;
     float doubleTapThreshold = 0.3f;
 
     protected CoreHealth coreHealthScriptRef;
     private GameStatsManagerScript statsRef;
+
+    [SerializeField] private GameUIManagerScript uiManager;
 
     // Functions 
 
@@ -35,11 +39,6 @@ public class PowerupStatusManagerScript : MonoBehaviour
         // REPLENISH CORE HEALTH POWERUP
         else if(powerupChoice == 5){
             ReplenishCore();
-        }
-        // WAVE NUMBER BOOST POWERUP
-        else if(powerupChoice == 6){
-            BoostWaveNumber();
-            powerupChoice = 0;
         }
         // GAME CURRENCY BOOST POWERUP
         else if(powerupChoice == 7){
@@ -78,6 +77,8 @@ public class PowerupStatusManagerScript : MonoBehaviour
 
                     // Add game juice here
                     Instantiate(landmine,touchPosition,Quaternion.identity);
+                    Instantiate(landmineParticleSystem,touchPosition,Quaternion.identity);
+                    CameraShakeEffect.Instance.ScreenShake(5f,0.2f);
 
                 }
 
@@ -98,20 +99,9 @@ public class PowerupStatusManagerScript : MonoBehaviour
 
     private void ReplenishCore(){
         //Add game juice here for healing the core
+        uiManager.PopCoreHealthUI();
         coreHealthScriptRef.coreHealth = 100;
     }
-
-
-
-    // WAVE NUMBER BOOST POWERUP 
-
-    // Boost wave number
-
-    private void BoostWaveNumber(){
-        //Add game juice here for the boost 
-        statsRef.waveNumber += waveNumberBoostAmount;
-    }
-
 
     // GAME CURRENCY BOOST POWERUP
 
@@ -119,6 +109,7 @@ public class PowerupStatusManagerScript : MonoBehaviour
 
     private void BoostGameCurrency(){
         // Add game juice here for the boost
+        uiManager.PopGameCurrencyUI();
         statsRef.gameCurrency += gameCurrencyBoostAmount;
     }
 
@@ -129,18 +120,16 @@ public class PowerupStatusManagerScript : MonoBehaviour
 
     private void RandomGift(){
         
-        int choice = Random.Range(0,3);
+        int choice = Random.Range(0,2);
 
         if(choice == 0){
             // Add game juice here 
-            statsRef.waveNumber += Random.Range(10,15);
+            uiManager.PopGameCurrencyUI();
+            statsRef.gameCurrency += Random.Range(50,100);
         }
         else if(choice == 1){
             // Add game juice here 
-            statsRef.gameCurrency += Random.Range(20,30);
-        }
-        else if(choice == 2){
-            // Add game juice here 
+            uiManager.PopCoreHealthUI();
             coreHealthScriptRef.coreHealth = 100;
         }
     }

@@ -39,7 +39,8 @@ public class GameplayManagerScript : MonoBehaviour
 
     private void SceneTransition(){
         // Add other effects here
-        Instantiate(sceneTransitionEffect, center, Quaternion.identity);
+        sceneTransitionEffect.SetActive(true);
+        sceneTransitionEffect.GetComponent<Animator>().SetTrigger("start");
     }
 
 

@@ -11,6 +11,8 @@ public class SplittingEnemyScript : BasicEnemy
     [SerializeField] private float rotationSpeed;
     [SerializeField] private GameObject[] possibleEnemies;
 
+    [SerializeField] private ParticleSystem splitEffect;
+
     // Functions 
 
     override protected void Update(){
@@ -47,8 +49,10 @@ public class SplittingEnemyScript : BasicEnemy
     override protected void CheckHealth(){
         if(enemyHealth <= 0){
 
+            Instantiate(splitEffect,transform.position,Quaternion.identity);
             SpawnNewEnemies();
             statsRef.gameCurrency += currencyGainOnTap;
+            uiManager.PopGameCurrencyUI();
             Destruct();
                         
         }

@@ -19,7 +19,15 @@ public abstract class CoreAbstractClass : MonoBehaviour
     float lastTapTime = 0f;
     float doubleTapThreshold = 0.3f;    
 
-    [SerializeField] private GameObject tapEffect;
+    [SerializeField] private GameObject normalTapEffect;
+    [SerializeField] private GameObject laserTapEffect;
+    [SerializeField] private ParticleSystem laserParticleSystem;
+
+    [SerializeField] private GameObject explosionTapEffect;
+    [SerializeField] private ParticleSystem explosionParticleSystem;
+
+    [SerializeField] private GameObject healTapEffect;
+    [SerializeField] private ParticleSystem healParticleSystem;
 
     [HideInInspector] public Animator animator;
 
@@ -74,8 +82,42 @@ public abstract class CoreAbstractClass : MonoBehaviour
                 Collider2D touchedCollider = Physics2D.OverlapPoint(touchPosition);
 
                 // Add game juice here to make the tap feel more responsive
+                // Different tap effects when different powerups are activated
 
-                Instantiate(tapEffect,touchPosition,Quaternion.identity);
+                switch(powerupStatus.powerupChoice){
+
+                    // Normal tap effect
+
+                    case 0:
+                        Instantiate(normalTapEffect,touchPosition,Quaternion.identity);
+                        break;
+
+                    // Laser powerup tap effect
+
+                    case 1:
+                        Instantiate(laserTapEffect,touchPosition,Quaternion.identity);
+                        Instantiate(laserParticleSystem,touchPosition,Quaternion.identity);
+                        break;
+
+                    // Explosive tap effect
+
+                    case 2:
+                        Instantiate(explosionTapEffect,touchPosition,Quaternion.identity);
+                        Instantiate(explosionParticleSystem,touchPosition,Quaternion.identity);
+                        break;
+
+                    // Heal tap effect
+
+                    case 3:
+                        Instantiate(healTapEffect,touchPosition,Quaternion.identity);
+                        Instantiate(healParticleSystem,touchPosition,Quaternion.identity);
+                        CameraShakeEffect.Instance.ScreenShake(1f,0.3f);
+                        break;
+
+
+                }
+
+                
                 
 
                 if((Time.time - lastTapTime <= doubleTapThreshold) && (selfCollider == touchedCollider) && (statsRef.gameCurrency > specialAttackCost) && (isUsingSpecialAttack == false)){
@@ -101,6 +143,7 @@ public abstract class CoreAbstractClass : MonoBehaviour
 
                 if((selfCollider == touchedCollider) && (powerupStatus.powerupChoice == 3) && (coreHealthRef.coreHealth < 100)){
                     // Add game juice here for healing effect 
+                    
                     coreHealthRef.coreHealth += 3f * Time.deltaTime;
                 }
 
@@ -134,5 +177,6 @@ public abstract class CoreAbstractClass : MonoBehaviour
     // Special attack abstract function
 
     protected abstract void SpecialAttack();
+
     
 }

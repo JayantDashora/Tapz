@@ -8,7 +8,10 @@ public class CoreTurretScript : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private float senseRadius;
     [SerializeField] private Transform shootPoint;
+    [SerializeField] private Transform particlePoint;
     [SerializeField] private float lifetime;
+
+    [SerializeField] private ParticleSystem shootEffect;
 
     private float timeSinceLastShot;
     private Collider2D[] targets;
@@ -46,6 +49,10 @@ public class CoreTurretScript : MonoBehaviour
 
                     // Instantiate the bullet at the shootPoint
                     // Add game juice here
+
+                    
+                    Instantiate(shootEffect, particlePoint.position, Quaternion.identity);
+                    CameraShakeEffect.Instance.ScreenShake(4f,0.2f);
                     Instantiate(bullet, shootPoint.position, transform.rotation);
                     
                     animator.SetBool("isShooting", true);

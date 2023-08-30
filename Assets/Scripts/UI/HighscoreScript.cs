@@ -9,7 +9,7 @@ public class HighscoreScript : MonoBehaviour
     // Variables
 
     void Start(){
-        GetComponent<TMP_Text>().text = "HIGHSCORE "+ PlayerPrefs.GetInt("HIGHSCORE").ToString(); 
+        GetComponent<TMP_Text>().text = "HIGHSCORE : "+ PlayerPrefs.GetInt("HIGHSCORE").ToString(); 
     }
 
 }

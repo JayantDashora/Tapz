@@ -99,4 +99,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthIncreasedPerSecond: 1
   healEffect: {fileID: 1560693925641746517, guid: d8e91ab20248af04da246ae0112f02f4, type: 3}
-  healEffectFrequency: 0.2
+  healEffectFrequency: 0.4
+  healParticleEffect: {fileID: 2247161490006406456, guid: b09501e94959793409529041362d9890, type: 3}

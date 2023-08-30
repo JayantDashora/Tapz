@@ -4,7 +4,15 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - enemyDataStore: {fileID: 11400000, guid: 9170cc503abfac24d9ebd9d80d5f40a2, type: 2}
+  - normalTapEffect: {instanceID: 0}
+  - laserTapEffect: {instanceID: 0}
+  - laserParticleSystem: {instanceID: 0}
+  - explosionTapEffect: {instanceID: 0}
+  - explosionParticleSystem: {instanceID: 0}
+  - healTapEffect: {instanceID: 0}
+  - healParticleSystem: {instanceID: 0}
+  - landmineParticleSystem: {instanceID: 0}
+  - animator: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

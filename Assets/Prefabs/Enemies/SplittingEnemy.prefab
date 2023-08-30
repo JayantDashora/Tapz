@@ -138,11 +138,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 20
   enemySpeed: 0.3
-  currencyGainOnTap: 1
+  currencyGainOnTap: 2
   enemyDamage: 4
-  destructEffect: {fileID: 2247161490006406456, guid: 2abc9d9643caf2544bc3c7d081062f68, type: 3}
+  destructEffect: {fileID: 2247161490006406456, guid: 7b068e2a8305519438ada519486538bd, type: 3}
   rotationSpeed: -270
   possibleEnemies:
   - {fileID: 7026737600554418632, guid: 564d13b387e10104b86881a4cb5d6617, type: 3}
   - {fileID: 6949971418920476299, guid: 103f05f9e4e06be469d2a02383e6606d, type: 3}
   - {fileID: 7026737600554418632, guid: e07a57d541bceb8489149e1a611788c1, type: 3}
+  splitEffect: {fileID: 2247161490006406456, guid: a995be3fc0a1c3b4dbaf0ea1b1b4ed2d, type: 3}

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2505333103637489198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3069370434178036302}
+  m_Layer: 0
+  m_Name: ParticlePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3069370434178036302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2505333103637489198}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.003, y: 0.396, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5315803421191015375}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5315803421191015370
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,6 +44,7 @@ GameObject:
   - component: {fileID: 5315803421191015373}
   - component: {fileID: 5176428957207767443}
   - component: {fileID: 8312417507050995855}
+  - component: {fileID: 8061187777192326477}
   m_Layer: 0
   m_Name: SpiralGrenadeShooterEnemy
   m_TagString: Enemy
@@ -33,6 +65,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5315803422389595365}
+  - {fileID: 3069370434178036302}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -121,14 +154,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad579572da3b7f9408f1a19e913d8e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 50
+  enemyHealth: 30
   enemySpeed: 0.3
-  currencyGainOnTap: 1
+  currencyGainOnTap: 3
   enemyDamage: 0
-  destructEffect: {fileID: 2247161490006406456, guid: 2abc9d9643caf2544bc3c7d081062f68, type: 3}
-  shootFrequency: 0.8
+  destructEffect: {fileID: 2247161490006406456, guid: 24efec270cbb49a43ac0d1fdceda1020, type: 3}
+  shootFrequency: 4
   bullet: {fileID: 1031707210356667897, guid: f5fd6fcbb578df44fb5b3507f6b8ebfa, type: 3}
   shootPoint: {fileID: 5315803422389595365}
+  particlePoint: {fileID: 3069370434178036302}
+  particleEffect: {fileID: 2247161490006406456, guid: 8b39bf44162c5914daaf5bb456558a9a, type: 3}
   rotationalSpeed: 45
   orbitRadius: 2
 --- !u!61 &8312417507050995855
@@ -157,6 +192,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.647023, y: 0.6229564}
   m_EdgeRadius: 0
+--- !u!95 &8061187777192326477
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315803421191015370}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: feaa75f7582c22349adc829872d38fe7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5315803422389595364
 GameObject:
   m_ObjectHideFlags: 0

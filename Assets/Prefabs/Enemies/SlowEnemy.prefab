@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 30
-  enemySpeed: 0.1
+  enemySpeed: 0.2
   currencyGainOnTap: 1
-  enemyDamage: 2
+  enemyDamage: 3
   destructEffect: {fileID: 2247161490006406456, guid: 2abc9d9643caf2544bc3c7d081062f68, type: 3}

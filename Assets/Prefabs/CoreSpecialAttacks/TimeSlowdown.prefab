@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243a24c99d2a50a40884ed514f345bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 30
+  lifetime: 40
   slowdownFactor: 0.05

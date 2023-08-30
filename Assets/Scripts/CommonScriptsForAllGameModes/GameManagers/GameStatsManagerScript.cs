@@ -7,7 +7,7 @@ public class GameStatsManagerScript : MonoBehaviour
     // Game Stats
 
     [HideInInspector] public int gameCurrency;
-    [HideInInspector] public int waveNumber = 1;
+    public int waveNumber = 1;
     [HideInInspector] public int highScore;
 
     // References 

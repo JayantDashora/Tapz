@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeac0561dc9cd374ab293fc198434053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 5
-  delayBeforeHide: 0.5
+  lifetime: 40
+  delayBeforeHide: 2

@@ -404,6 +404,7 @@ Transform:
   - {fileID: 994233686}
   - {fileID: 190280054}
   - {fileID: 1264294988}
+  - {fileID: 1011063827637628328}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -421,9 +422,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootFrequency: 0.5
   bullet: {fileID: 5358607202288858164, guid: ed2c087f71d611542a1d98e8eb62db64, type: 3}
-  senseRadius: 4
+  senseRadius: 3
   shootPoint: {fileID: 4065032871350932593}
-  lifetime: 10
+  particlePoint: {fileID: 1011063827637628328}
+  lifetime: 40
+  shootEffect: {fileID: 2247161490006406456, guid: 055c07f8ffd65ea43aab2a50acbc3a10, type: 3}
 --- !u!50 &5225932226807523775
 Rigidbody2D:
   serializedVersion: 4
@@ -491,3 +494,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &6554252502553910337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1011063827637628328}
+  m_Layer: 0
+  m_Name: ParticlePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1011063827637628328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6554252502553910337}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3426721136400826377}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

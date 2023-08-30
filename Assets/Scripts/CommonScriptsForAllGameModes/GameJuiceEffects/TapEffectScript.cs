@@ -14,7 +14,7 @@ public class TapEffectScript : MonoBehaviour
 
     private void Update() {
 
-        interpolateAmount += (interpolateAmount + Time.deltaTime) % 0.002f;
+        interpolateAmount += (interpolateAmount + Time.deltaTime) % 0.03f;
         transform.localScale = Vector3.Lerp(Vector3.zero, finalSize, interpolateAmount);
 
         lifetime -= Time.deltaTime;

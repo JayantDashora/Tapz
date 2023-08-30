@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4037074420105658482}
   - component: {fileID: 4037074420105658484}
   - component: {fileID: 1627725342445825394}
+  - component: {fileID: 316015427546130387}
   m_Layer: 0
   m_Name: LandminePowerup
   m_TagString: Untagged
@@ -99,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupNumber: 4
-  lifetime: 10
+  lifetime: 30
+  instructionsText: DOUBLE TAP TO PLACE LANDMINES.
 --- !u!61 &1627725342445825394
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -126,3 +128,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
+--- !u!95 &316015427546130387
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4037074420105658485}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e960d913904bb546bdbe3fa37b78105, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

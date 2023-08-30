@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7994846892204729088}
   - component: {fileID: 7994846892204729090}
   - component: {fileID: 4120847825210823996}
+  - component: {fileID: 1667932550279957766}
   m_Layer: 0
   m_Name: ExplosiveClickPowerup
   m_TagString: Untagged
@@ -99,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupNumber: 2
-  lifetime: 5
+  lifetime: 30
+  instructionsText: TAP ON THE ENEMIES TO DROP BOMBS.
 --- !u!61 &4120847825210823996
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -126,3 +128,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.74, y: 0.7870033}
   m_EdgeRadius: 0
+--- !u!95 &1667932550279957766
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7994846892204729091}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c64f0f0feeed3b48ac91b9030caa287, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

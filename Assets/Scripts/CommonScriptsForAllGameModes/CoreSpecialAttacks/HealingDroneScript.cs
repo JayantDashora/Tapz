@@ -33,6 +33,8 @@ public class HealingDroneScript : MonoBehaviour
     [SerializeField] private GameObject healEffect;
     [SerializeField] private float healEffectFrequency;
 
+    [SerializeField] private ParticleSystem healParticleEffect;
+
     private float timer;
 
 
@@ -58,6 +60,7 @@ public class HealingDroneScript : MonoBehaviour
             // Add game juice here
 
             if(timer > healEffectFrequency){
+                Instantiate(healParticleEffect,center,Quaternion.identity);
                 Instantiate(healEffect,center,Quaternion.identity);
                 timer = 0; 
             }
@@ -86,13 +89,13 @@ public class HealingDroneScript : MonoBehaviour
 
     private void EnterScreen(){
         sprite.flipX = false;
-        interpolateAmountEnter += (interpolateAmountEnter + Time.deltaTime) % 0.001f;
+        interpolateAmountEnter += (interpolateAmountEnter + Time.deltaTime) % 0.03f;
         transform.position = Vector3.Lerp(Vector3.Lerp(spawnPoint,iPoint1,interpolateAmountEnter),Vector3.Lerp(iPoint1,targetPoint,interpolateAmountEnter),interpolateAmountEnter);
     }
 
     private void ExitScreen(){
         sprite.flipX = true;
-        interpolateAmountExit += (interpolateAmountExit + Time.deltaTime) % 0.001f;
+        interpolateAmountExit += (interpolateAmountExit + Time.deltaTime) % 0.03f;
         transform.position = Vector3.Lerp(Vector3.Lerp(targetPoint,iPoint2,interpolateAmountExit),Vector3.Lerp(iPoint2,destroyPoint,interpolateAmountExit),interpolateAmountExit);
     }
 

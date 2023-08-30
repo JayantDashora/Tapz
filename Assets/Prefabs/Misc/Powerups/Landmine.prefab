@@ -319,6 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionRange: 2
+  explosion: {fileID: 2247161490006406456, guid: d4b8b9cf978c1b946b6cfb307dbef2e3, type: 3}
 --- !u!50 &3251485965066241346
 Rigidbody2D:
   serializedVersion: 4

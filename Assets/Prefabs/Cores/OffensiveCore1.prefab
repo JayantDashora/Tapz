@@ -354,8 +354,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isUsingSpecialAttack: 0
-  specialAttackCost: 1
-  tapEffect: {fileID: 1560693925641746517, guid: f793c1a846abfd44eb311a6f117b6e90, type: 3}
+  specialAttackCost: 30
+  normalTapEffect: {fileID: 1560693925641746517, guid: f793c1a846abfd44eb311a6f117b6e90, type: 3}
+  laserTapEffect: {fileID: 1560693925641746517, guid: 3289e52e964f6f5439510b6b7540b3ce, type: 3}
+  laserParticleSystem: {fileID: 2247161490006406456, guid: b9d34fecf63be054db4e534f8ce35b6f, type: 3}
+  explosionTapEffect: {fileID: 1560693925641746517, guid: 84288b83c4019cb4e9ceb15ba01840d8, type: 3}
+  explosionParticleSystem: {fileID: 2247161490006406456, guid: d4b8b9cf978c1b946b6cfb307dbef2e3, type: 3}
+  healTapEffect: {fileID: 1560693925641746517, guid: 2cf57f292d66ed3498e7b4e4c12375ce, type: 3}
+  healParticleSystem: {fileID: 2247161490006406456, guid: f202e363f9e6a194cbc1cf2d3e6fc162, type: 3}
   animator: {fileID: 0}
   saw: {fileID: 7453497241008646364, guid: 5812954a0d513244eba125c1085ed2d9, type: 3}
 --- !u!95 &2002171991

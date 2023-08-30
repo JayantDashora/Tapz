@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5819327974947047618}
   - component: {fileID: 8136702845396352509}
   - component: {fileID: 1897746049604366622}
+  - component: {fileID: 4917192995933692021}
   m_Layer: 0
   m_Name: OneManEnemy
   m_TagString: Enemy
@@ -137,8 +138,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 100
-  enemySpeed: 0.2
-  currencyGainOnTap: 1
+  enemySpeed: 0.3
+  currencyGainOnTap: 5
   enemyDamage: 10
-  destructEffect: {fileID: 2247161490006406456, guid: 2abc9d9643caf2544bc3c7d081062f68, type: 3}
-  rotationSpeed: 270
+  destructEffect: {fileID: 2247161490006406456, guid: 541ad89fcda44d94fa7597ad3ddf3c6e, type: 3}
+  specialEffect: {fileID: 1560693925641746517, guid: bcde8a0df42b65f4aa5e8d2e69e22d78, type: 3}
+  specialParticles: {fileID: 2247161490006406456, guid: c7dcac3714df19a499b870e293fe0cf0, type: 3}
+--- !u!95 &4917192995933692021
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6949971418920476299}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2099741b6a87cdd429e76732e04bc17c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

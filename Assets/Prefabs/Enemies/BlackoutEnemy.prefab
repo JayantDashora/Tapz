@@ -100,11 +100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 20
-  enemySpeed: 0.2
-  currencyGainOnTap: 1
+  enemySpeed: 0.3
+  currencyGainOnTap: 2
   enemyDamage: 2
-  destructEffect: {fileID: 2247161490006406456, guid: 2abc9d9643caf2544bc3c7d081062f68, type: 3}
+  destructEffect: {fileID: 2247161490006406456, guid: 7b068e2a8305519438ada519486538bd, type: 3}
   rotationSpeed: 270
+  fadeDuration: 8
 --- !u!50 &-4671631785905895258
 Rigidbody2D:
   serializedVersion: 4

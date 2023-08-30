@@ -103,7 +103,8 @@ MonoBehaviour:
   senseRadius: 3
   rotationalSpeed: 30
   orbitRadius: 1.5
-  lifetime: 20
+  lifetime: 40
+  killEffect: {fileID: 2247161490006406456, guid: b4505757bb3932046b850d3b6da9dc31, type: 3}
 --- !u!58 &3327274040392636451
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -162,10 +163,10 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 2
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.4
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:

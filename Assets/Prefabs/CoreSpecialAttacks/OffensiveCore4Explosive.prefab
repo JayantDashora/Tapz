@@ -45,3 +45,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 2
+  explosionEffect1: {fileID: 2247161490006406456, guid: d4b8b9cf978c1b946b6cfb307dbef2e3, type: 3}
+  explosionEffect2: {fileID: 3654163600610690666, guid: d04a171b528109e4bbcf6e1a9d0507c9, type: 3}
+  spawnPoints:
+  - {x: 0, y: 0, z: 0}
+  - {x: 1, y: 1, z: 0}
+  - {x: 2, y: 2, z: 0}
+  - {x: 3, y: 3, z: 0}
+  - {x: -1, y: 4, z: 0}
+  - {x: -2, y: 5, z: 0}
+  - {x: -3, y: -1, z: 0}
+  - {x: 3.5, y: -2, z: 0}
+  - {x: -3.5, y: -3, z: 0}
+  - {x: 1.5, y: -4, z: 0}
+  - {x: 2.5, y: -5, z: 0}
+  - {x: -2.5, y: 5, z: 0}
+  - {x: 0.5, y: 2, z: 0}
+  - {x: -0.5, y: 3, z: 0}
+  - {x: -1.5, y: 4, z: 0}
+  - {x: -0.5, y: 1, z: 0}
+  - {x: 3, y: 0.5, z: 0}
+  - {x: -3, y: -5.5, z: 0}

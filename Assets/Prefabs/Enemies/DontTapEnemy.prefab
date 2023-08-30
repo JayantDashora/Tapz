@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5819327974947047618}
   - component: {fileID: 8136702845396352509}
   - component: {fileID: 3292951720496121878}
+  - component: {fileID: 2017651273088291188}
   m_Layer: 0
   m_Name: DontTapEnemy
   m_TagString: Enemy
@@ -137,9 +138,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 10
-  enemySpeed: 0.2
+  enemySpeed: 0.3
   currencyGainOnTap: 0
   enemyDamage: -1
-  destructEffect: {fileID: 2247161490006406456, guid: 2abc9d9643caf2544bc3c7d081062f68, type: 3}
+  destructEffect: {fileID: 2247161490006406456, guid: a42d59b14e429fd43a12dbeb2ee060dc, type: 3}
   enemyDamageOnTapped: 3
-  rotationSpeed: -270
+  healEffect: {fileID: 1560693925641746517, guid: d8e91ab20248af04da246ae0112f02f4, type: 3}
+  healParticle: {fileID: 2247161490006406456, guid: 3ac1740bf261fd74d9aebdf6cdfed0db, type: 3}
+--- !u!95 &2017651273088291188
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6949971418920476299}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9e24b676ef3fa9429087f0c07093fed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

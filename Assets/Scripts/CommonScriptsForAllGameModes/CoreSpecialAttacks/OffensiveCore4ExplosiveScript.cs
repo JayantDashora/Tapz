@@ -11,12 +11,20 @@ public class OffensiveCore4ExplosiveScript : MonoBehaviour
 
     private GameObject[] allEnemies;
 
+    [SerializeField] private ParticleSystem explosionEffect1;
+    [SerializeField] private GameObject explosionEffect2;
+
+    [SerializeField] private Vector3[] spawnPoints;
+
     private OffensiveCore4Script coreScriptRef;
+    
+    private Animator flashAnimator;
 
 
     void Start(){
 
         coreScriptRef = GameObject.FindWithTag("Core").GetComponent<OffensiveCore4Script>();
+        flashAnimator = GameObject.Find("UI/Canvas/FlashEffect").GetComponent<Animator>();
         GameJuice();
         Explode();
         Invoke("SelfDestruct", lifetime);
@@ -40,6 +48,16 @@ public class OffensiveCore4ExplosiveScript : MonoBehaviour
 
     private void GameJuice(){
         // Add game juice here
+
+        flashAnimator.SetTrigger("flashWhite");
+
+        foreach(Vector3 spawnPoint in spawnPoints){
+            Instantiate(explosionEffect1, spawnPoint, Quaternion.identity);
+            Instantiate(explosionEffect2, spawnPoint, Quaternion.identity);
+        }
+
+        CameraShakeEffect.Instance.ScreenShake(30f,3f);
+            
     }
 
     // Destroy gameobject 

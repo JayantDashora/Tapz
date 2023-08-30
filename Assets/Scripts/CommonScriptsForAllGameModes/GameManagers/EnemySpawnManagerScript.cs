@@ -13,14 +13,30 @@ public class EnemySpawnManagerScript : MonoBehaviour
     [SerializeField] private int budgetGainPerWave;
     [SerializeField] private List<GameObject> enemies = new List<GameObject>();
     [SerializeField] private List<int> enemiesCost = new List<int>();
+
+    private bool case1bool = true;
+    private bool case2bool = true;
+    private bool case3bool = true;
+
+    private bool case4bool = true;
+
+    private bool case8bool = true;
+
+    private bool case15bool = true;
+    private bool case20bool = true;
+
+    private bool case28bool = true;
+    private bool case35bool = true;
     
 
     // References
 
     private GameStatsManagerScript statsRef;
+    private GameUIManagerScript uiManager;
 
     void Start(){
         statsRef = GameObject.Find("GameManagers/GameStatsManager").GetComponent<GameStatsManagerScript>();
+        uiManager = GameObject.Find("GameManagers/GameUIManager").GetComponent<GameUIManagerScript>();
         mainCamera = Camera.main;
     }
 
@@ -38,18 +54,68 @@ public class EnemySpawnManagerScript : MonoBehaviour
 
             case 1:
                 enemyAccess = 3;
+                if(case1bool == true){
+                    uiManager.ShowInstructions("TAP ON ENEMIES TO ELIMINATE THEM. DIFFERENT ENEMIES NEED DIFFERENT NUMBER OF TAPS.", 10f);
+                    case1bool = false;
+                }
                 break;
 
+            case 2:
+                if(case2bool == true){
+                    uiManager.ShowInstructions("RANDOM POWER-UPS WILL SPAWN IN GAME, BUT USING THEM TO DEFEAT ENEMIES WILL NOT EARN YOU MONEY.", 10f);
+                    case2bool = false;
+                }
+                break;
+
+            case 3:
+                if(case3bool == true){
+                    uiManager.ShowInstructions("THE CORE WILL PLAY A SPECIAL ANIMATION WHEN YOU CAN AFFORD THE SPECIAL ATTACK, DOUBLE TAP THE CORE TO BUY IT.", 10f);
+                    case3bool = false;
+                }
+                break;
+
+            case 4:
+                if(case4bool == true){
+                    uiManager.ShowInstructions("SURVIVE FOR AS LONG AS YOU CAN. I CHALLENGE YOU TO REACH LEVEL 40", 10f);
+                    case4bool = false;
+                }
+                break;
+
+        
             case 8:
+                enemyAccess = 5;
+                if(case8bool == true){
+                    case8bool = false;
+                }
+                break;
+
+            case 15:
                 enemyAccess = 7;
+                if(case15bool == true){
+                    uiManager.ShowInstructions("AVOID TAPPING ON THE BLUE ENEMIES.", 10f);
+                    case15bool = false;
+                }
                 break;
 
             case 20:
-                enemyAccess = 10;
+                enemyAccess = 9;
+                if(case20bool == true){
+                    case20bool = false;
+                }
+                break;
+
+            case 28:
+                enemyAccess = 12;
+                if(case28bool == true){
+                    case28bool = false;
+                }
                 break;
 
             case 35:
                 enemyAccess = 14;
+                if(case35bool == true){
+                    case35bool = false;
+                }
                 break;
         }
         
@@ -87,6 +153,8 @@ public class EnemySpawnManagerScript : MonoBehaviour
 
         // Add game juice here to display the new wave number
 
+        uiManager.IncrementWaveNumber();
+
     }
 
 
@@ -108,21 +176,21 @@ public class EnemySpawnManagerScript : MonoBehaviour
                 // LEFT
                 spawnPoint.x = 0;
                 spawnPoint.y = Random.value; 
-                spawnPoint.x -= 0.1f;            
+                spawnPoint.x -= 0.2f;            
                 break;
 
             case 1:
                 // TOP
                 spawnPoint.y = 1;
                 spawnPoint.x = Random.value; 
-                spawnPoint.y += 0.1f;  
+                spawnPoint.y += 0.15f;  
                 break;
                                 
             case 2:
                 // RIGHT
                 spawnPoint.x = 1;
                 spawnPoint.y = Random.value;  
-                spawnPoint.x += 0.1f;
+                spawnPoint.x += 0.2f;
                 
                 break;
 
@@ -130,7 +198,7 @@ public class EnemySpawnManagerScript : MonoBehaviour
                 // BOTTOM
                 spawnPoint.y = 0;
                 spawnPoint.x = Random.value; 
-                spawnPoint.y -= 0.1f;
+                spawnPoint.y -= 0.15f;
                 break;
                                 
         }
