@@ -31,6 +31,8 @@ public abstract class CoreAbstractClass : MonoBehaviour
 
     [HideInInspector] public Animator animator;
 
+    [SerializeField] private ParticleSystem normalTapParticleEffect;
+
 
     // Functions 
 
@@ -60,9 +62,7 @@ public abstract class CoreAbstractClass : MonoBehaviour
             // The effect of the enemy collision
             // Add game juice here
 
-
-
-
+            Handheld.Vibrate();
         }
 
     }
@@ -79,7 +79,7 @@ public abstract class CoreAbstractClass : MonoBehaviour
 
             if(touch.phase == TouchPhase.Began){
 
-                Collider2D touchedCollider = Physics2D.OverlapPoint(touchPosition);
+                Collider2D touchedCollider = Physics2D.OverlapCircle(touchPosition,0.1f);
 
                 // Add game juice here to make the tap feel more responsive
                 // Different tap effects when different powerups are activated
@@ -89,7 +89,8 @@ public abstract class CoreAbstractClass : MonoBehaviour
                     // Normal tap effect
 
                     case 0:
-                        Instantiate(normalTapEffect,touchPosition,Quaternion.identity);
+                        //Instantiate(normalTapEffect,touchPosition,Quaternion.identity);
+                        Instantiate(normalTapParticleEffect,touchPosition,Quaternion.identity);
                         break;
 
                     // Laser powerup tap effect

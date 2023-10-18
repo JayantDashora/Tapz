@@ -197,6 +197,9 @@ MonoBehaviour:
   currencyGainOnTap: 1
   enemyDamage: 4
   destructEffect: {fileID: 2247161490006406456, guid: 24efec270cbb49a43ac0d1fdceda1020, type: 3}
+  killAudioClip: {fileID: 8300000, guid: 5927cbd43b21c8b4a86323df7164cb4a, type: 3}
+  explosionAudioClip: {fileID: 8300000, guid: 12e533488b94090439c89d4b7bed37b2, type: 3}
+  laserAudioClip: {fileID: 8300000, guid: 95de85212453e8c4fbbb65e1f4dc738e, type: 3}
   shootFrequency: 2
   bullet: {fileID: 5358607202288858164, guid: 39d6f3602eac802448a07dfc325452df, type: 3}
   shootPoint: {fileID: 5315803422389595365}

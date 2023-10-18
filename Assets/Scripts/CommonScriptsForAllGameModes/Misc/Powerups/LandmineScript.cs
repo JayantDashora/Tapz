@@ -9,6 +9,8 @@ public class LandmineScript : MonoBehaviour
     [SerializeField] private float explosionRange;
     [SerializeField] private ParticleSystem explosion;
 
+    [SerializeField] private AudioClip explosionAudioClip;
+
     private Collider2D[] enemiesInRange;
 
     // Checking collisions
@@ -27,7 +29,8 @@ public class LandmineScript : MonoBehaviour
                     // Add game juice here
 
                     Destroy(enemy.gameObject);
-                    CameraShakeEffect.Instance.ScreenShake(5f,0.2f);
+                    CameraShakeEffect.Instance.ScreenShake(5f,0.3f);
+                    GameAudioManager.instance.PlaySoundEffect(explosionAudioClip, 1f);
                     Instantiate(explosion,transform.position,Quaternion.identity);
                     Destroy(gameObject);
                 }

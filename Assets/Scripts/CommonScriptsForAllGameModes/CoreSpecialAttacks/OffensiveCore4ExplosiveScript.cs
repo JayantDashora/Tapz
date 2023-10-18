@@ -20,6 +20,8 @@ public class OffensiveCore4ExplosiveScript : MonoBehaviour
     
     private Animator flashAnimator;
 
+    [SerializeField] private AudioClip blastEffect;
+
 
     void Start(){
 
@@ -56,7 +58,9 @@ public class OffensiveCore4ExplosiveScript : MonoBehaviour
             Instantiate(explosionEffect2, spawnPoint, Quaternion.identity);
         }
 
-        CameraShakeEffect.Instance.ScreenShake(30f,3f);
+        CameraShakeEffect.Instance.ScreenShake(30f,2.2f);
+        GameAudioManager.instance.PlaySoundEffect(blastEffect,1f);
+        Handheld.Vibrate();
             
     }
 

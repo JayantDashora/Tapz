@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   budget: 10
-  budgetGainPerWave: 5
+  budgetGainPerWave: 3
   enemies:
   - {fileID: 6949971418920476299, guid: 103f05f9e4e06be469d2a02383e6606d, type: 3}
   - {fileID: 7026737600554418632, guid: 564d13b387e10104b86881a4cb5d6617, type: 3}

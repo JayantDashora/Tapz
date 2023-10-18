@@ -1648,6 +1648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08185d3cb8208fd4f88a8e5762d49e4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonClickEffect: {fileID: 8300000, guid: be79373e816df1a4dadfc2979b1c7edc, type: 3}
   closingBannerAnimator: {fileID: 1120821915}
   transitionDelayHomeButton: 2
 --- !u!4 &1474203081

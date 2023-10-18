@@ -76,7 +76,7 @@ public class EnemySpawnManagerScript : MonoBehaviour
 
             case 4:
                 if(case4bool == true){
-                    uiManager.ShowInstructions("SURVIVE FOR AS LONG AS YOU CAN. I CHALLENGE YOU TO REACH LEVEL 40", 10f);
+                    uiManager.ShowInstructions("SURVIVE FOR AS LONG AS YOU CAN. I CHALLENGE YOU TO CROSS LEVEL 50", 10f);
                     case4bool = false;
                 }
                 break;
@@ -92,7 +92,7 @@ public class EnemySpawnManagerScript : MonoBehaviour
             case 15:
                 enemyAccess = 7;
                 if(case15bool == true){
-                    uiManager.ShowInstructions("AVOID TAPPING ON THE BLUE ENEMIES.", 10f);
+                    uiManager.ShowInstructions("AVOID TAPPING ON THE BLUE ENEMIES.", 25f);
                     case15bool = false;
                 }
                 break;
@@ -134,10 +134,33 @@ public class EnemySpawnManagerScript : MonoBehaviour
 
                     if(choice == 1){
 
-                        // Spawning the enemy on a random location
+                        if((i == 9) || (i == 10)){
 
-                        Instantiate(enemies[i], GenerateSpawnPoint(), transform.rotation);
-                        tempBudget -= enemiesCost[i];
+                            Vector3 spawnPointTurret = Vector3.zero;
+
+                            spawnPointTurret.x = Random.Range(0.1f, 0.9f);
+                            spawnPointTurret.y = Random.Range(0.1f, 0.9f);
+
+                            Vector3 worldSpawnPointTurret = Camera.main.ViewportToWorldPoint(spawnPointTurret);
+                            worldSpawnPointTurret.z = 0;
+
+                            // Spawning the turret enemy on a random location
+
+                            Instantiate(enemies[i], worldSpawnPointTurret, transform.rotation);
+                            tempBudget -= enemiesCost[i];
+
+                        }
+
+                        else{
+
+                            // Spawning the enemy on a random location
+
+                            Instantiate(enemies[i], GenerateSpawnPoint(), transform.rotation);
+                            tempBudget -= enemiesCost[i];
+
+                        }
+
+
                     }
 
                 }

@@ -320,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionRange: 2
   explosion: {fileID: 2247161490006406456, guid: d4b8b9cf978c1b946b6cfb307dbef2e3, type: 3}
+  explosionAudioClip: {fileID: 8300000, guid: 12e533488b94090439c89d4b7bed37b2, type: 3}
 --- !u!50 &3251485965066241346
 Rigidbody2D:
   serializedVersion: 4

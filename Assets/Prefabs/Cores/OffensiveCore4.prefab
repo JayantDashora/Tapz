@@ -448,6 +448,7 @@ MonoBehaviour:
   healTapEffect: {fileID: 1560693925641746517, guid: 2cf57f292d66ed3498e7b4e4c12375ce, type: 3}
   healParticleSystem: {fileID: 2247161490006406456, guid: f202e363f9e6a194cbc1cf2d3e6fc162, type: 3}
   animator: {fileID: 0}
+  normalTapParticleEffect: {fileID: 2247161490006406456, guid: db9f03fda59729e45ad6248b3fe1e306, type: 3}
   explosive: {fileID: 3723573837885919110, guid: fb42a265680863749a28119217228782, type: 3}
 --- !u!95 &50901499
 Animator:

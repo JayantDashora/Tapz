@@ -23,6 +23,7 @@ public class GameUIManagerScript : MonoBehaviour
     [SerializeField] private Animator instructionsAnimator;
     [SerializeField] private Animator powerupInstructionsAnimator;
 
+
     // Functions
 
     private void Start() {
@@ -83,6 +84,7 @@ public class GameUIManagerScript : MonoBehaviour
         powerupInstructionsText.text = info;
         powerupInstructionsAnimator.SetTrigger("enter");
         Invoke("ShowPowerupInstructionsEnd", duration);
+
     }
 
     private void ShowPowerupInstructionsEnd(){

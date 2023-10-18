@@ -23,6 +23,7 @@ public class PowerupStatusManagerScript : MonoBehaviour
 
     [SerializeField] private GameUIManagerScript uiManager;
 
+
     // Functions 
 
     private void Start() {
@@ -73,11 +74,12 @@ public class PowerupStatusManagerScript : MonoBehaviour
 
                 // Add game juice here to make the tap feel more responsive
 
-                if((Time.time - lastTapTime <= doubleTapThreshold) && (Physics2D.OverlapCircleAll(touchPosition,0.1f).Length == 0)){
+                if((Time.time - lastTapTime <= doubleTapThreshold) && (Physics2D.OverlapCircleAll(touchPosition,0.15f).Length == 0)){
 
                     // Add game juice here
                     Instantiate(landmine,touchPosition,Quaternion.identity);
                     Instantiate(landmineParticleSystem,touchPosition,Quaternion.identity);
+
                     CameraShakeEffect.Instance.ScreenShake(5f,0.2f);
 
                 }
@@ -132,6 +134,7 @@ public class PowerupStatusManagerScript : MonoBehaviour
             uiManager.PopCoreHealthUI();
             coreHealthScriptRef.coreHealth = 100;
         }
+
     }
 
 

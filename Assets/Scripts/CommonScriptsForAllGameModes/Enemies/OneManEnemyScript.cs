@@ -9,6 +9,8 @@ public class OneManEnemyScript : BasicEnemy
     [SerializeField] private GameObject specialEffect;
     [SerializeField] private ParticleSystem specialParticles;
 
+    [SerializeField] private AudioClip blastEffect;
+
     private Vector3 center = new Vector3(0,0,0);
 
     // Checking collisions
@@ -34,6 +36,8 @@ public class OneManEnemyScript : BasicEnemy
         Instantiate(specialParticles,center,Quaternion.identity);
         Instantiate(specialEffect,center,Quaternion.identity);
         CameraShakeEffect.Instance.ScreenShake(30f,3f);
+        Handheld.Vibrate();
+        GameAudioManager.instance.PlaySoundEffect(blastEffect,1f);
         fadeEffectAnimator.SetTrigger("flashWhite");
         // The special attack will have a very big explosion on the center of the screen with a lot of screen shake and other effects
 

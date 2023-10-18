@@ -142,6 +142,9 @@ MonoBehaviour:
   currencyGainOnTap: 0
   enemyDamage: -1
   destructEffect: {fileID: 2247161490006406456, guid: a42d59b14e429fd43a12dbeb2ee060dc, type: 3}
+  killAudioClip: {fileID: 8300000, guid: 5927cbd43b21c8b4a86323df7164cb4a, type: 3}
+  explosionAudioClip: {fileID: 8300000, guid: 12e533488b94090439c89d4b7bed37b2, type: 3}
+  laserAudioClip: {fileID: 8300000, guid: 95de85212453e8c4fbbb65e1f4dc738e, type: 3}
   enemyDamageOnTapped: 3
   healEffect: {fileID: 1560693925641746517, guid: d8e91ab20248af04da246ae0112f02f4, type: 3}
   healParticle: {fileID: 2247161490006406456, guid: 3ac1740bf261fd74d9aebdf6cdfed0db, type: 3}

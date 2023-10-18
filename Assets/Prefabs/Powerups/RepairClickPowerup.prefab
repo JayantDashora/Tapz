@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupNumber: 3
-  lifetime: 15
+  lifetime: 20
   instructionsText: TAP ON THE CORE TO HEAL IT.
 --- !u!61 &1502137380939849672
 BoxCollider2D:

@@ -13,12 +13,14 @@ public class MainMenuButtonsScript : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject chooseCoreScreen;
     [SerializeField] private float transitionDelayChooseCoreButton;
+    [SerializeField] private AudioClip buttonClickEffect;
 
     // Functions
 
     // (ChooseCore Button) Setup the choose core scene
 
     public void ChooseCoreTrigger(){
+        GameAudioManager.instance.PlaySoundEffect(buttonClickEffect, 4f);
         closingBannerAnimator.SetBool("canClose", true);
         Invoke("ChooseCore",transitionDelayChooseCoreButton);
     }    

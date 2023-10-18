@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupNumber: 4
-  lifetime: 30
+  lifetime: 20
   instructionsText: DOUBLE TAP TO PLACE LANDMINES.
 --- !u!61 &1627725342445825394
 BoxCollider2D:

@@ -532,7 +532,10 @@ MonoBehaviour:
   explosionParticleSystem: {fileID: 2247161490006406456, guid: d4b8b9cf978c1b946b6cfb307dbef2e3, type: 3}
   healTapEffect: {fileID: 1560693925641746517, guid: 2cf57f292d66ed3498e7b4e4c12375ce, type: 3}
   healParticleSystem: {fileID: 2247161490006406456, guid: f202e363f9e6a194cbc1cf2d3e6fc162, type: 3}
+  damageAudioClip: {fileID: 0}
+  normalTapAudioClip: {fileID: 0}
   animator: {fileID: 0}
+  normalTapParticleEffect: {fileID: 2247161490006406456, guid: db9f03fda59729e45ad6248b3fe1e306, type: 3}
   coreTurret: {fileID: 3426721136400826378, guid: 5331e453d7a94a84299a2fb86d06921d, type: 3}
   particleEffect: {fileID: 2247161490006406456, guid: c614b06c49a9a214f9f05ceaf93ae06f, type: 3}
 --- !u!95 &426402239

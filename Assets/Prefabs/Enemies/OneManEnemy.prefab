@@ -142,8 +142,12 @@ MonoBehaviour:
   currencyGainOnTap: 5
   enemyDamage: 10
   destructEffect: {fileID: 2247161490006406456, guid: 541ad89fcda44d94fa7597ad3ddf3c6e, type: 3}
+  killAudioClip: {fileID: 8300000, guid: 5927cbd43b21c8b4a86323df7164cb4a, type: 3}
+  explosionAudioClip: {fileID: 8300000, guid: 12e533488b94090439c89d4b7bed37b2, type: 3}
+  laserAudioClip: {fileID: 8300000, guid: 95de85212453e8c4fbbb65e1f4dc738e, type: 3}
   specialEffect: {fileID: 1560693925641746517, guid: bcde8a0df42b65f4aa5e8d2e69e22d78, type: 3}
   specialParticles: {fileID: 2247161490006406456, guid: c7dcac3714df19a499b870e293fe0cf0, type: 3}
+  blastEffect: {fileID: 8300000, guid: d75df3e4d9d906d43b42c6ffda04075d, type: 3}
 --- !u!95 &4917192995933692021
 Animator:
   serializedVersion: 4

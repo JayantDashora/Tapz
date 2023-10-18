@@ -9,6 +9,7 @@ public class ChooseYourCoreOverlayButtonsScript : MonoBehaviour
 
     [SerializeField] private Animator closingBannerAnimator;
     [SerializeField] private float transitionDelayPlayButton;
+    [SerializeField] private AudioClip buttonClickEffect;
 
     // Functions for all the different buttons 
 
@@ -73,6 +74,7 @@ public class ChooseYourCoreOverlayButtonsScript : MonoBehaviour
     // (Play Button) Load the next scene 
 
     public void PlayGameTrigger(){
+        GameAudioManager.instance.PlaySoundEffect(buttonClickEffect, 4f);
         closingBannerAnimator.SetBool("canClose", true);
         Invoke("PlayGame",transitionDelayPlayButton);
     }

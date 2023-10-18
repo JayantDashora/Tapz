@@ -23,6 +23,11 @@ public class BasicEnemy : MonoBehaviour
     protected GameStatsManagerScript statsRef;
     protected GameUIManagerScript uiManager;
 
+    [SerializeField] protected AudioClip killAudioClip;
+    [SerializeField] protected AudioClip explosionAudioClip;
+
+    [SerializeField] protected AudioClip laserAudioClip;
+
     protected Animator fadeEffectAnimator;
 
     // Functions
@@ -70,6 +75,7 @@ public class BasicEnemy : MonoBehaviour
 
     protected virtual void Destruct(){
         // Add game juice here
+        GameAudioManager.instance.PlaySoundEffect(killAudioClip, 15f);
         Instantiate(destructEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
@@ -85,9 +91,21 @@ public class BasicEnemy : MonoBehaviour
 
             if(touch.phase == TouchPhase.Began){
 
-                Collider2D touchedCollider = Physics2D.OverlapPoint(touchPosition);
+                Collider2D touchedCollider = Physics2D.OverlapCircle(touchPosition,0.2f);
 
                 // Add game juice here to make the tap feel more responsive
+
+                if(powerupStatus.powerupChoice == 0){
+                    GameAudioManager.instance.PlaySoundEffect(killAudioClip, 15f);
+                }
+
+                if(powerupStatus.powerupChoice == 2){
+                    GameAudioManager.instance.PlaySoundEffect(explosionAudioClip, 0.4f);
+                }
+
+                if(powerupStatus.powerupChoice == 1){
+                    GameAudioManager.instance.PlaySoundEffect(laserAudioClip,0.4f);
+                }
 
                 if(selfCollider == touchedCollider){
                     Tapped(touchPosition);
@@ -109,6 +127,7 @@ public class BasicEnemy : MonoBehaviour
             // No powerup
             case 0:
                 // Add game juice here for normal kill
+                
                 CameraShakeEffect.Instance.ScreenShake(2f,0.3f);
                 enemyHealth -= 10;
                 break;
