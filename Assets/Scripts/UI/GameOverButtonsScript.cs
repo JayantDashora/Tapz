@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class GameOverButtonsScript : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class GameOverButtonsScript : MonoBehaviour
 
     [SerializeField] private Animator closingBannerAnimator;
     [SerializeField] private float transitionDelayHomeButton;
+    [SerializeField] private Button rewardButton;
 
 
     // Functions
@@ -22,5 +25,10 @@ public class GameOverButtonsScript : MonoBehaviour
 
     public void HomeButton(){
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+    }
+
+    public void RewardButton(){
+        AdsManager.instance.ShowRewardedAd();
+        rewardButton.gameObject.SetActive(false);
     }
 }
